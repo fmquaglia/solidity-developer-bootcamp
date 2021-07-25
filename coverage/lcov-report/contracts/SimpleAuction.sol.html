@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/SimpleAuction.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> SimpleAuction.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">9.52% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>2/21</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">25% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">9.52% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>2/21</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">pragma solidity ^0.6.6;
+&nbsp;
+contract SimpleAuction {
+  // Parameters of the auction. Times are either
+  // absolute unix timestamps (seconds since 1970-01-01)
+  // or time periods in seconds.
+  address payable public beneficiary;
+  uint public auctionEndTime;
+&nbsp;
+  // Current state of the auction.
+  address public highestBidder;
+  uint public highestBid;
+&nbsp;
+  // Allowed withdrawals of previous bids
+  mapping(address =&gt; uint) pendingReturns;
+&nbsp;
+  // Set to true at the end, disallows any change.
+  // By default initialized to `false`.
+  bool ended;
+&nbsp;
+  // Events that will be emitted on changes.
+  event HighestBidIncreased(address bidder, uint amount);
+  event AuctionEnded(address winner, uint amount);
+&nbsp;
+  // The following is a so-called natspec comment,
+  // recognizable by the three slashes.
+  // It will be shown when the user is asked to
+  // confirm a transaction.
+&nbsp;
+  /// Create a simple auction with `_biddingTime`
+  /// seconds bidding time on behalf of the
+  /// beneficiary address `_beneficiary`.
+  constructor(
+    uint _biddingTime,
+    address payable _beneficiary
+  ) public {
+    beneficiary = _beneficiary;
+    auctionEndTime = now + _biddingTime;
+  }
+&nbsp;
+  /// Bid on the auction with the value sent
+  /// together with this transaction.
+  /// The value will only be refunded if the
+  /// auction is not won.
+<span class="fstat-no" title="function not covered" >  function bid() public payable {</span>
+    // No arguments are necessary, all
+    // information is already part of
+    // the transaction. The keyword payable
+    // is required for the function to
+    // be able to receive Ether.
+&nbsp;
+    // Revert the call if the bidding
+    // period is over.
+<span class="cstat-no" title="statement not covered" >    require(</span>
+      now &lt;= auctionEndTime,
+      "Auction already ended."
+    );
+&nbsp;
+    // If the bid is not higher, send the
+    // money back.
+<span class="cstat-no" title="statement not covered" >    require(</span>
+      msg.value &gt; highestBid,
+      "There already is a higher bid."
+    );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (highestBid != 0) {</span>
+      // Sending back the money by simply using
+      // highestBidder.send(highestBid) is a security risk
+      // because it could execute an untrusted contract.
+      // It is always safer to let the recipients
+      // withdraw their money themselves.
+<span class="cstat-no" title="statement not covered" >      pendingReturns[highestBidder] += highestBid</span>;
+    }
+<span class="cstat-no" title="statement not covered" >    highestBidder = msg.sender</span>;
+<span class="cstat-no" title="statement not covered" >    highestBid = msg.value</span>;
+<span class="cstat-no" title="statement not covered" >    emit HighestBidIncreased(msg.sender, msg.value);</span>
+  }
+&nbsp;
+  /// Withdraw a bid that was overbid.
+<span class="fstat-no" title="function not covered" >  function withdraw() public returns (bool) {</span>
+<span class="cstat-no" title="statement not covered" >    uint amount = pendingReturns[msg.sender];</span>
+<span class="cstat-no" title="statement not covered" >    if (amount &gt; 0) {</span>
+      // It is important to set this to zero because the recipient
+      // can call this function again as part of the receiving call
+      // before `send` returns.
+<span class="cstat-no" title="statement not covered" >      pendingReturns[msg.sender] = 0</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      if (!msg.sender.send(amount)) {</span>
+        // No need to call throw here, just reset the amount owing
+<span class="cstat-no" title="statement not covered" >        pendingReturns[msg.sender] = amount</span>;
+<span class="cstat-no" title="statement not covered" >        return false;</span>
+      }
+    }
+<span class="cstat-no" title="statement not covered" >    return true;</span>
+  }
+&nbsp;
+  /// End the auction and send the highest bid
+  /// to the beneficiary.
+<span class="fstat-no" title="function not covered" >  function auctionEnd() public {</span>
+    // It is a good guideline to structure functions that interact
+    // with other contracts (i.e. they call functions or send Ether)
+    // into three phases:
+    // 1. checking conditions
+    // 2. performing actions (potentially changing conditions)
+    // 3. interacting with other contracts
+    // If these phases are mixed up, the other contract could call
+    // back into the current contract and modify the state or cause
+    // effects (ether payout) to be performed multiple times.
+    // If functions called internally include interaction with external
+    // contracts, they also have to be considered interaction with
+    // external contracts.
+&nbsp;
+    // 1. Conditions
+<span class="cstat-no" title="statement not covered" >    require(now &gt;= auctionEndTime, "Auction not yet ended.")</span>;
+<span class="cstat-no" title="statement not covered" >    require(!ended, "auctionEnd has already been called.")</span>;
+&nbsp;
+    // 2. Effects
+<span class="cstat-no" title="statement not covered" >    ended = true</span>;
+<span class="cstat-no" title="statement not covered" >    emit AuctionEnded(highestBidder, highestBid);</span>
+&nbsp;
+    // 3. Interaction
+<span class="cstat-no" title="statement not covered" >    beneficiary.transfer(highestBid)</span>;
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Jul 25 2021 15:22:10 GMT-0300 (Argentina Standard Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
